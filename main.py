@@ -2,7 +2,7 @@ import os
 import time
 
 from mainFunctions import mainFunctions
-from player import player, dealer
+from player import dealer, player
 
 
 class game(mainFunctions):
@@ -27,6 +27,9 @@ class game(mainFunctions):
         print(f"Hello {pla.name}, time to play some Blackjack!")
 
         while True:
+            # check if endgame
+            pla.endGame()
+
             # place bet
             pla.placeBet()
 
@@ -79,7 +82,7 @@ class game(mainFunctions):
                         print(f"Dealer has bust with a score of {dea.total}")
                         pla.win()
                         break
-                    else: 
+                    else:
                         # checking if dealer won
                         if dea.processCards(pla=pla):
                             print(

@@ -1,6 +1,5 @@
 import os
 import sys
-import time
 
 
 class player:
@@ -21,9 +20,7 @@ class player:
         if self.amount <= 0:
             print(
                 f'Sorry {self.name}, you have played well but you have lost.')
-            print("Game will close shortly")
-            time.sleep(5)
-            sys.exit
+            sys.exit()
 
     def placeBet(self):
         """
